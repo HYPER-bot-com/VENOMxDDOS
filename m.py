@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#By @venomXCRAZY
+#By @HYPER_OMI
 
 import telebot
 import subprocess
@@ -217,7 +217,7 @@ bgmi_cooldown = {}
 COOLDOWN_TIME =0
 
 # Handler for /bgmi command
-@bot.message_handler(commands=['bgmi'])
+@bot.message_handler(commands=['attack'])
 def handle_bgmi(message):
     user_id = str(message.chat.id)
     if user_id in allowed_user_ids:
@@ -375,4 +375,4 @@ def broadcast_message(message):
 
 
 bot.polling()
-#By venom crazy  @venomXcrazy
+#By HYPER_OMI @HYPER_OMI
